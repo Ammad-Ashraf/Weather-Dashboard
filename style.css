@@ -1,0 +1,357 @@
+
+    :root {
+        --primary-color: #3498db;
+        --secondary-color: #2c3e50;
+        --background-color: #f5f7fa;
+        --text-color: #333;
+        --accent-color: #e74c3c;
+        --success-color: #2ecc71;
+    }
+    body, html {
+        font-family: 'Roboto', 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        line-height: 1.6;
+    }
+    .container {
+        display: flex;
+        min-height: 100vh;
+    }
+    .side-menu {
+        width: 250px;
+        background-color: var(--secondary-color);
+        color: white;
+        padding: 20px;
+        border-top-right-radius: 30px;
+    }
+    .logo {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 26px;
+        color: var(--primary-color);
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    }
+    .menu-items a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        padding: 12px 15px;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        border-radius: 5px;
+    }
+    .menu-items a:hover {
+        background-color: rgba(255,255,255,0.1);
+        transform: translateX(5px);
+    }
+    .main-content {
+        flex: 1;
+        padding: 30px;
+        overflow-y: auto;
+    }
+    .weather-widget {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 25px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+    }
+    .weather-widget:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+    .search-bar {
+        margin-bottom: 30px;
+        display: flex;
+    }
+    .search-bar input {
+        flex-grow: 1;
+        padding: 12px 15px;
+        border: 2px solid #ddd;
+        border-radius: 5px 0 0 5px;
+        font-size: 16px;
+        transition: all 0.3s ease;
+    }
+    .search-bar input:focus {
+        border-color: var(--primary-color);
+        outline: none;
+    }
+    .search-bar button {
+        padding: 12px 25px;
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        font-size: 16px;
+        transition: all 0.3s ease;
+    }
+    .search-bar button:hover {
+        background-color: #2980b9;
+    }
+    .charts-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+    .chart {
+        flex: 1 1 calc(33% - 30px);
+        min-width: 300px;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+    }
+    .chart:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+    .forecast-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        background-color: white;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .forecast-table th, .forecast-table td {
+        padding: 15px;
+        text-align: left;
+    }
+    .forecast-table th {
+        background-color: var(--primary-color);
+        color: white;
+        font-weight: bold;
+    }
+    .forecast-table tr:nth-child(even) {
+        background-color: #f8f9fa;
+    }
+    .forecast-table tr:hover {
+        background-color: #e9ecef;
+    }
+    .filter-container {
+        position: relative;
+        display: inline-block;
+    }
+    .filter-button {
+        background-color: var(--secondary-color);
+        color: white;
+        padding: 12px;
+        font-size: 14px;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+        font-weight: bold;
+    }
+    .filter-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 200px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        border-radius: 4px;
+    }
+    .filter-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+    .filter-content a:hover {
+        background-color: #f1f1f1;
+    }
+    .show {
+        display: block;
+    }
+    .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+    .pagination button {
+        margin: 0 5px;
+        padding: 8px 15px;
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .pagination button:hover {
+        background-color: #2980b9;
+    }
+    
+    .chatbot-widget {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        width: 4rem;
+        height: 4rem;
+        background-color: white;
+        border-radius: 0.5rem;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        overflow: hidden;
+    }
+    
+    .chatbot-widget.open {
+        width: 24rem;
+        height: 26rem;
+    }
+    
+    .chatbot-toggle {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--secondary-color);
+        color: white;
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .chatbot-toggle:hover {
+        background-color: var(--primary-color);
+    }
+    
+    .chatbot-content {
+        display: none;
+        flex-direction: column;
+        height: 100%;
+    }
+    
+    .chatbot-widget.open .chatbot-content {
+        display: flex;
+    }
+    
+    .chatbot-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        background-color: var(--secondary-color);
+        color: white;
+    }
+    
+    .chatbot-header h3 {
+        font-weight: bold;
+        margin: 0;
+    }
+    
+    .chatbot-close {
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+    
+    .chatbot-messages {
+        flex-grow: 1;
+        overflow-y: auto;
+        padding: 1rem;
+    }
+    
+    .chatbot-form {
+        padding: 1rem;
+        border-top: 1px solid #E5E7EB;
+    }
+    
+    .chatbot-input {
+        height: 30%;
+        width: 90%;
+        padding: 0.5rem;
+        border: 1px solid #E5E7EB;
+        border-radius: 0.5rem;
+    }
+    
+    .chatbot-send {
+
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 20%;
+        background-color: #3B82F6;
+        color: white;
+        border: none;
+        border-radius: 0.5rem;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .chatbot-send:hover {
+        background-color: #2563EB;
+    }
+    .chatbot-message {
+        padding: 10px;
+        margin: 5px 0;
+        border-radius: 10px;
+        max-width: 80%;
+    }
+    
+    .user-message {
+        background-color: #e6f3ff;
+        align-self: flex-end;
+        margin-left: auto;
+    }
+    
+    .bot-message {
+        background-color: #f0f0f0;
+        align-self: flex-start;
+    }
+    
+    .chatbot-messages {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    @media (max-width: 768px) {
+        .container {
+            flex-direction: column;
+        }
+        .side-menu {
+            width: 100%;
+            padding: 15px;
+        }
+        .main-content {
+            padding: 15px;
+        }
+        .chart {
+            flex: 1 1 100%;
+        }
+        .chatbot-widget {
+            width: 90%;
+            right: 5%;
+            left: 5%;
+        }
+        .filter-button {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 10px;
+            font-size: 12px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .filter-content {
+            display: show;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 120px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            font-size: small;
+            border-radius: 4px;
+        }
+    }

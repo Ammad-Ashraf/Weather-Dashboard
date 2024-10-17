@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="side-menu">
+        <div class="logo">Weather Dashboard</div>
+        <div class="menu-items">
+          <a href="#dashboard">Dashboard</a>
+          <a href="#forecast-table">Tables</a>
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="search-bar">
+          <input type="text" id="city-input" placeholder="Enter city name" />
+          <button id="search-btn">Search</button>
+        </div>
+        <div class="weather-widget" id="weather-widget">
+          <h2 id="city">City Name</h2>
+          <div id="temperature"></div>
+          <div id="weather-description"></div>
+        </div>
+        <div class="charts-container">
+          <div class="chart">
+            <canvas id="tempBarChart"></canvas>
+          </div>
+          <div class="chart">
+            <canvas id="weatherDoughnutChart"></canvas>
+          </div>
+          <div class="chart">
+            <canvas id="tempLineChart"></canvas>
+          </div>
+        </div>
+        <table class="forecast-table" id="forecast-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Temperature</th>
+              <th>Weather</th>
+              <th>
+                <div class="filter-container">
+                    <button onclick="toggleDropdown()" class="filter-button">Filter Options ▼</button>
+                    <div id="filterDropdown" class="filter-content">
+                        <a href="#" onclick="showTemperaturesAscending()">Temperatures Ascending</a>
+                        <a href="#" onclick="showTemperaturesDescending()">Temperatures Descending</a>
+                        <a href="#" onclick="filterRainyDays()">Rainy Days</a>
+                        <a href="#" onclick="showHighestTemperature()">Highest Temperature</a>
+                    </div>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <div class="pagination" id="pagination"></div>
+      </div>
+    </div>
+    <div id="chatbot-widget" class="chatbot-widget">
+        <button id="chatbot-toggle" class="chatbot-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </button>
+        <div id="chatbot-content" class="chatbot-content">
+            <div class="chatbot-header">
+                <h3>Weather Assistant</h3>
+                <button id="chatbot-close" class="chatbot-close">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                </button>
+            </div>
+            <div id="chatbot-messages" class="chatbot-messages"></div>
+            <form id="chatbot-form" class="chatbot-form">
+                <input type="text" id="chatbot-input" placeholder="Type your message..." class="chatbot-input">
+                <button type="submit" class="chatbot-send">Send</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="Script.js"></script>
+  </body>
+</html>
