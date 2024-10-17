@@ -30,7 +30,6 @@ function fetchWeather(city) {
 // Initial fetch for a default city
 fetchWeather("Islamabad");
 function fetchForecast(lat, lon) {
-  console.log(lat, lon);
   $.ajax({
     url: `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`,
     method: "GET",
@@ -245,22 +244,6 @@ function toggleDropdown(event) {
     dropdown.classList.add("show");
   }
 }
-
-document.getElementById("filter-button").addEventListener("click", toggleDropdown);
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function (event) {
-  if (!event.target.matches(".filter-button")) {
-    var dropdowns = document.getElementsByClassName("filter-content");
-    for (var i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains("show")) {
-        openDropdown.classList.remove("show");
-      }
-    }
-  }
-};
-
 // Placeholder functions for filter actions
 function showTemperaturesAscending() {
   const sortedData = [...forecastData].sort(
