@@ -44,7 +44,7 @@ To view the Weather Dashboard, visit the [GitHub Pages deployment](https://ammad
 3. Interact with the chatbot by clicking the chatbot toggle button and typing your queries.
 
 ### Limitations
-- ** The chatbot using GEMINI API can extract city only if city is follow up by word "in" **
+- **The chatbot using GEMINI API can extract city only if city is follow up by word "in"**
 - Prompts example : *What's the weather in London?*
 
 ### License
