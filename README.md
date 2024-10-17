@@ -32,22 +32,20 @@ To view the Weather Dashboard, visit the [GitHub Pages deployment](https://ammad
 1. Clone the repository:
    ```bash
    git clone https://github.com/ammad-ashraf/Weather-Dashboard.git
-2.
-Navigate to the project directory:
- ```bash
-cd Weather-Dashboard
-3.
-Open index.html in your web browser to view the application locally.
+2. Navigate to the project directory:
+    ```bash
+    cd Weather-Dashboard
+3. Open index.html in your web browser to view the application locally.
 
 
 ### Usage
-1.
-Enter a city name in the search bar and click "Search" to view the current weather and forecast.
-2.
-Use the filter options in the forecast table to sort or filter the data.
-3.
-Interact with the chatbot by clicking the chatbot toggle button and typing your queries.
+1. Enter a city name in the search bar and click "Search" to view the current weather and forecast.
+2. Use the filter options in the forecast table to sort or filter the data.
+3. Interact with the chatbot by clicking the chatbot toggle button and typing your queries.
 
+### Limitations
+- ** The chatbot using GEMINI API can extract city only if city is follow up by word "in" **
+- Prompts example : *What's the weather in London?*
 
 ### License
 This project is licensed under the MIT License.
