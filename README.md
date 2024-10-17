@@ -54,6 +54,7 @@ This project is licensed under the MIT License.
 OpenWeatherMap for providing the weather data API.
 Chart.js for the charting library.
 jQuery for simplifying JavaScript operations.
+GEMINI API for handling user prompts.
 
 
 *Feel free to contribute to this project by submitting issues or pull requests. Enjoy exploring the Weather Dashboard!*
