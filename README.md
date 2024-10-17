@@ -34,6 +34,7 @@ To view the Weather Dashboard, visit the [GitHub Pages deployment](https://ammad
    git clone https://github.com/ammad-ashraf/Weather-Dashboard.git
 2.
 Navigate to the project directory:
+ ```bash
 cd Weather-Dashboard
 3.
 Open index.html in your web browser to view the application locally.
