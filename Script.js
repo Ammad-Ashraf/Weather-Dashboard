@@ -28,7 +28,7 @@ function fetchWeather(city) {
   });
 }
 // Initial fetch for a default city
-fetchWeather("Lahore");
+fetchWeather("Islamabad");
 function fetchForecast(lat, lon) {
   $.ajax({
     url: `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`,
